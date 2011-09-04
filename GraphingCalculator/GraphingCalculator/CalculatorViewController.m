@@ -8,6 +8,9 @@
 
 #import "CalculatorViewController.h"
 
+
+#pragma mark - Implementation & Synthesize Header
+
 @interface CalculatorViewController() 
 @property (readonly) CalculatorBrain *brain;    //Private & ReadOnly Model
 @end
@@ -19,6 +22,7 @@
 @synthesize radiansModeButton;
 @synthesize editVariableModeEnabledButton;
 
+//@synthesize myGraphViewMVC;
 
 
 #pragma mark - Utility Methods
@@ -160,10 +164,6 @@
 
 
 - (IBAction)solvePressed:(id)sender {
-
-    //-- BUG - FUNCIONALIDAD EXTRA PENDIENTE:
-    //-- FALLO al introducir operaciones de 1 operando en medio de una expresión,
-    //   añade el operando, la operación y el resultado
     
     //If user is in the middle of typing a number when he press solve, set operand
     if (userIsInTheMiddleOfTypingANumber) {
@@ -186,6 +186,36 @@
     
     [self.brain performOperation:@"C"];     //clears everything for next operation
 }
+
+
+- (IBAction)graphPressed:(id)sender {
+    
+    //If user is in the middle of typing a number when he press solve, set operand
+    if (userIsInTheMiddleOfTypingANumber) {
+        [self.brain setOperand:[display.text doubleValue]];
+        userIsInTheMiddleOfTypingANumber = NO;
+    }
+    
+    //If not = present at the end of internalExpression
+    if (![[CalculatorBrain descriptionOfExpression:self.brain.expression] hasSuffix:@"= "]) {
+        [self.brain performOperation: @"="];
+    }
+
+    //Graph the expression (set initial zoom, evaluate the expression for all X axis values, draw points in graph, update graph view)
+
+    
+    // -- TEST -- Before implementing the protocol to display expression as a graph
+    
+    GraphViewController *myGraphViewMVC = [[GraphViewController alloc] init];
+    //Set myGraphViewMVC Protocol Properties -- passing the model data to be used in the new MVC
+
+    
+    [self.navigationController pushViewController:myGraphViewMVC animated:YES];
+    [myGraphViewMVC release];    
+    
+    
+}
+
 
 - (IBAction)variablePressed:(UIButton *)sender{
 
@@ -295,10 +325,13 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
-{
+{    
     [super viewDidLoad];
     
     brain = [[CalculatorBrain alloc] init];
+    
+    self.title = @"Graphing Calculator";    //Main UINavigationController Title
+
 }
 
 

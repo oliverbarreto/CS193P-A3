@@ -1,4 +1,11 @@
-
+CS193P-A3.V1.0 - Initial Commit
+	- Created the Project Structure: Window Based App
+	- Imported CalculatorBrain, Axes
+	- Created: 
+		- Main Navigation Bar Controller in AppDelegate:
+		- CalculatorViewController as the first Controller in the App
+		- A new GraphViewController to manage the graph view of the current expression in the 			CalculatorViewController
+		- The XIB file contains a ZoomIn and a ZoomOut buttons, also displays a Label to present the user the current state of the scale property 
 
 Completed:
 - Required:

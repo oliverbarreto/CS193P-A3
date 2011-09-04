@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CalculatorBrain.h"
+#import "GraphView.h"
+
 
 @interface CalculatorViewController : UIViewController {
 @private
@@ -24,6 +26,8 @@
     UIButton *editVariableModeEnabledButton;
 
     UIButton *radiansModeButton;                //Set Mode: Deg vs Rads
+    
+//    GraphViewController *myGraphViewMVC;
 }
 
 //@property BOOL userIsInTheMiddleOfTyingANumber, stateForTypeOfAngleMetrics, editVariableModeEnabled;
@@ -33,9 +37,12 @@
 @property (nonatomic, retain) IBOutlet UIButton *radiansModeButton;
 @property (nonatomic, retain) IBOutlet UIButton *editVariableModeEnabledButton;
 
+//@property (nonatomic, retain) GraphViewController *myGraphViewMVC;
+
 - (IBAction)digitPressed:(id)sender;
 - (IBAction)operationPressed:(id)sender;
 - (IBAction)variablePressed:(id)sender;
 - (IBAction)solvePressed:(id)sender;
+- (IBAction)graphPressed:(id)sender;
 
 @end
