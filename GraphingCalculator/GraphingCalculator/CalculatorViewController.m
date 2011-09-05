@@ -201,15 +201,14 @@
         [self.brain performOperation: @"="];
     }
 
+
     //Graph the expression (set initial zoom, evaluate the expression for all X axis values, draw points in graph, update graph view)
 
-    
     // -- TEST -- Before implementing the protocol to display expression as a graph
     
     GraphViewController *myGraphViewMVC = [[GraphViewController alloc] init];
-    //Set myGraphViewMVC Protocol Properties -- passing the model data to be used in the new MVC
-
-    
+    myGraphViewMVC.myExpression = self.brain.expression;
+    myGraphViewMVC.title = [CalculatorBrain descriptionOfExpression:self.brain.expression];
     [self.navigationController pushViewController:myGraphViewMVC animated:YES];
     [myGraphViewMVC release];    
     

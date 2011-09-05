@@ -10,11 +10,22 @@
 #import "GraphView.h"
 
 @interface GraphViewController : UIViewController <GraphViewDelegate> {
+    float myScale;
+    CGPoint myOrigin;
+    id myExpression;
 
-    
+    GraphView *myGraphView;
+    UILabel *scaleLabel;
 }
 
-@property (assign) GraphView
+@property (nonatomic) float myScale;
+@property (nonatomic) CGPoint myOrigin;
+@property (nonatomic, copy) id myExpression;
 
+@property (assign) IBOutlet GraphView *myGraphView;
+@property (nonatomic, retain) IBOutlet UILabel *scaleLabel;
+
+- (IBAction)zoomIn:(id)sender;
+- (IBAction)zoomOut:(id)sender;
 
 @end

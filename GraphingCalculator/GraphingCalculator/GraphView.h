@@ -12,15 +12,17 @@
 @class GraphView;
 
 @protocol GraphViewDelegate 
-- (float)scaleForGraphView:(GraphView *)requestor;  //scale > 0
-//-- Yet more to be defined !!!
+- (float)scaleForGraphView:(GraphView *)requestor;      //scale > 0
+- (CGPoint)originForGraphView:(GraphView *)requestor;   //origin of graph on screen coordinates
+
+    //-- Yet more to be defined !!!
+
 @end
 
 
 @interface GraphView : UIView {
     id <GraphViewDelegate> delegate;
+
 }
-
 @property (assign) id <GraphViewDelegate> delegate;
-
 @end

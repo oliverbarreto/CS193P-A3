@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CalculatorBrain.h"
-#import "GraphView.h"
+#import "GraphViewController.h"
 
 
 @interface CalculatorViewController : UIViewController {

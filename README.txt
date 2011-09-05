@@ -1,3 +1,11 @@
+CS193P-A3.V1.1.0 -
+	- Wired Up the XIB File of GraphViewController: zoomIn, zoomOut & scaleLabel & UIView
+	- GraphViewController is pushed when graph pressed
+		- sets the delegate of GraphView to self in GraphViewController
+		- sets title to the current expression in CalculatorViewController
+		- init method setups the iVars origin = (0,0) & scale = 14
+		
+ 
 CS193P-A3.V1.0 - Initial Commit
 	- Created the Project Structure: Window Based App
 	- Imported CalculatorBrain, Axes
