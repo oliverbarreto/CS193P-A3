@@ -60,12 +60,10 @@
     }
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    
+
     [self drawCircleAtPoint:centerPointOfGraphView withRadius:sizeOfGraphView inContext:context];
     
-    CGFloat myScale = [self.delegate scaleForGraphView:self];
-    [AxesDrawer drawAxesInRect:rect originAtPoint:centerPointOfGraphView scale:myScale];
+    [AxesDrawer drawAxesInRect:rect originAtPoint:centerPointOfGraphView scale:[self.delegate scaleForGraphView:self]];
 }
 
 

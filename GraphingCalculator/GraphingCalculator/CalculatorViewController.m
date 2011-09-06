@@ -12,7 +12,7 @@
 #pragma mark - Implementation & Synthesize Header
 
 @interface CalculatorViewController() 
-@property (readonly) CalculatorBrain *brain;    //Private & ReadOnly Model
+@property (readonly) CalculatorBrain *brain;  //Private & ReadOnly Model
 @end
 
 @implementation CalculatorViewController
@@ -21,8 +21,14 @@
 @synthesize display, displayMem, displayOperation, displayTypeOfAngleMetrics;
 @synthesize radiansModeButton;
 @synthesize editVariableModeEnabledButton;
+@synthesize myGraphViewMVC;
 
-//@synthesize myGraphViewMVC;
+-(GraphViewController *)myGraphViewMVC {
+    if (!myGraphViewMVC) {
+        myGraphViewMVC = [[GraphViewController alloc] init];
+    }
+    return myGraphViewMVC;
+}
 
 
 #pragma mark - Utility Methods
@@ -204,15 +210,12 @@
 
     //Graph the expression (set initial zoom, evaluate the expression for all X axis values, draw points in graph, update graph view)
 
-    // -- TEST -- Before implementing the protocol to display expression as a graph
+
+    self.myGraphViewMVC.myExpression = self.brain.expression;
+    self.myGraphViewMVC.title = [NSString stringWithFormat:@"y = %@", [CalculatorBrain descriptionOfExpression:self.brain.expression]];
     
-    GraphViewController *myGraphViewMVC = [[GraphViewController alloc] init];
-    myGraphViewMVC.myExpression = self.brain.expression;
-    myGraphViewMVC.title = [CalculatorBrain descriptionOfExpression:self.brain.expression];
-    [self.navigationController pushViewController:myGraphViewMVC animated:YES];
-    [myGraphViewMVC release];    
-    
-    
+    [self.navigationController pushViewController:self.myGraphViewMVC animated:YES];
+    //[myGraphViewMVC release];    //In Dealloc because its a property
 }
 
 
@@ -366,6 +369,7 @@
 
     // Releasing my own created objects
     [brain release];  
+    [myGraphViewMVC release];    
     
     [super dealloc];
 }

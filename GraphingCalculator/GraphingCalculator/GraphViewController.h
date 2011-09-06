@@ -22,7 +22,7 @@
 @property (nonatomic) CGPoint myOrigin;
 @property (nonatomic, copy) id myExpression;
 
-@property (assign) IBOutlet GraphView *myGraphView;
+@property (retain) IBOutlet GraphView *myGraphView;
 @property (nonatomic, retain) IBOutlet UILabel *scaleLabel;
 
 - (IBAction)zoomIn:(id)sender;

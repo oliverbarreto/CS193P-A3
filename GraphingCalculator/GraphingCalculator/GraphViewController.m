@@ -17,6 +17,16 @@
 @synthesize scaleLabel;
 @synthesize myExpression;
 
+-(void)updateMyUI {
+    self.scaleLabel.text = [NSString stringWithFormat:@"Scale: %.2f", self.myScale];
+    [self.myGraphView setNeedsDisplay];
+}
+
+- (void)setup {
+    self.myOrigin = CGPointMake(0,0);
+    self.myScale = 14.0;
+}
+
 - (void)setMyExpression:(id)newExpression {
     [myExpression release];
     myExpression = [newExpression copy];    
@@ -24,10 +34,16 @@
     if (myGraphView.window) [myGraphView setNeedsDisplay];
 }
 
-- (void)setup {
-    self.myOrigin = CGPointMake(10,10);
-    self.myScale = 14.0;
+- (void)setMyScale:(float)newScale {
+    if (newScale == 0) {
+        myScale = 1.0;
+    } else {
+        myScale = newScale;
+    }
+    
+    [self updateMyUI];
 }
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -42,14 +58,12 @@
 #pragma mark - GraphView Protocol Implementation
 
 - (float)scaleForGraphView:(GraphView *)requestor {  
-    
     //scale > 0
     return self.myScale; 
 }
 
 
 - (CGPoint)originForGraphView:(GraphView *)requestor {  
-    
     //Sets the origin for the graph on screen, in GraphView bounds coordinates
     return self.myOrigin;
 }
@@ -58,12 +72,10 @@
 
 - (void)zoomIn:(id)sender {
     self.myScale *= 0.8;
-    [myGraphView setNeedsDisplay];
 }
 
 - (void)zoomOut:(id)sender {
     self.myScale /= 0.8;
-    [myGraphView setNeedsDisplay];
 }
 
 
@@ -83,9 +95,8 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view from its nib.
-    myGraphView.delegate = self;
-    self.scaleLabel.text = [NSString stringWithFormat:@"Scale: %.2f", self.myScale];
-
+    self.myGraphView.delegate = self;
+    [self updateMyUI];
 }
 
 - (void)viewDidUnload
@@ -109,6 +120,7 @@
 
     [self releaseNilsOfOutlets];    
     [myExpression release];
+    [myGraphView release];
     
     [super dealloc];
 }

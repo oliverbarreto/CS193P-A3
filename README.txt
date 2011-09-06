@@ -1,3 +1,8 @@
+CS193P-A3.V1.1.1 -
+	- Changed the GraphViewController to a Property style
+	- Changed the Setter for myScale to UpDateUI every time it is called (zoomIn, zoomOut)
+	- 
+
 CS193P-A3.V1.1.0 -
 	- Wired Up the XIB File of GraphViewController: zoomIn, zoomOut & scaleLabel & UIView
 	- GraphViewController is pushed when graph pressed
