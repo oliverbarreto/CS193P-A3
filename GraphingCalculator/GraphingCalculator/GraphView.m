@@ -12,13 +12,23 @@
 @implementation GraphView
 @synthesize delegate;
 
+- (void)setup {
+    self.contentMode = UIViewContentModeRedraw;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self setup];
+        
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [self setup];
 }
 
 
@@ -38,11 +48,7 @@
 
 #pragma mark - DrawRect Method to override
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-
+- (void)testingDrawing:(CGRect)rect {
     //-- TESTING DRAWING: Draws the X&Y Axis & a red circle 
     CGPoint centerPointOfGraphView;
     centerPointOfGraphView.x = self.bounds.origin.x + self.bounds.size.width/2;
@@ -50,7 +56,7 @@
     
     CGFloat sizeOfGraphView = self.bounds.size.width/2;     //prepare for rotation
     if (sizeOfGraphView > self.bounds.size.height/2) sizeOfGraphView = self.bounds.size.height/2;
-
+    
     //prepare for scale property
     //sizeOfGraphView *= 1.0;                             
     if ([self.delegate scaleForGraphView:self] > 0 ) {
@@ -60,10 +66,18 @@
     }
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-
+    
     [self drawCircleAtPoint:centerPointOfGraphView withRadius:sizeOfGraphView inContext:context];
     
     [AxesDrawer drawAxesInRect:rect originAtPoint:centerPointOfGraphView scale:[self.delegate scaleForGraphView:self]];
+
+}
+
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
+{
+    [self testingDrawing:rect];
 }
 
 

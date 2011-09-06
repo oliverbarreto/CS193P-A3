@@ -212,7 +212,7 @@
 
 
     self.myGraphViewMVC.myExpression = self.brain.expression;
-    self.myGraphViewMVC.title = [NSString stringWithFormat:@"y = %@", [CalculatorBrain descriptionOfExpression:self.brain.expression]];
+    self.myGraphViewMVC.title = [NSString stringWithFormat:@"%@ y", [CalculatorBrain descriptionOfExpression:self.brain.expression]];
     
     [self.navigationController pushViewController:self.myGraphViewMVC animated:YES];
     //[myGraphViewMVC release];    //In Dealloc because its a property

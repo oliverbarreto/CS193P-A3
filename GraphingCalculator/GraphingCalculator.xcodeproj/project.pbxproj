@@ -27,13 +27,12 @@
 		AD227721141016F900DC6DAA /* Button_GreyDark_40.png in Resources */ = {isa = PBXBuildFile; fileRef = AD22771A141016F900DC6DAA /* Button_GreyDark_40.png */; };
 		AD227722141016F900DC6DAA /* Button_GreyLight_40.png in Resources */ = {isa = PBXBuildFile; fileRef = AD22771B141016F900DC6DAA /* Button_GreyLight_40.png */; };
 		AD227723141016F900DC6DAA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AD22771C141016F900DC6DAA /* Default.png */; };
-		AD227724141016F900DC6DAA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AD22771D141016F900DC6DAA /* Icon.png */; };
 		AD22772A1410171000DC6DAA /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD2277251410171000DC6DAA /* CalculatorViewController.xib */; };
 		AD22772B1410171000DC6DAA /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2277261410171000DC6DAA /* CalculatorViewController.m */; };
 		AD22772C1410171000DC6DAA /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2277281410171000DC6DAA /* CalculatorBrain.m */; };
-		AD339BD31413DF1F00176DC2 /* set.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD339BD21413DF1F00176DC2 /* set.jpeg */; };
 		AD339BE41413E35100176DC2 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD339BE21413E35100176DC2 /* GraphViewController.m */; };
 		AD339BE71413E37A00176DC2 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD339BE61413E37A00176DC2 /* GraphViewController.xib */; };
+		AD8F259414165494005F5903 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F259314165494005F5903 /* icon.png */; };
 		AD9A02C51410F0B500B4B765 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9A02C41410F0B500B4B765 /* AxesDrawer.m */; };
 		ADCFCD8B1411245D00F94DC0 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCFCD8A1411245D00F94DC0 /* GraphView.m */; };
 /* End PBXBuildFile section */
@@ -72,16 +71,15 @@
 		AD22771A141016F900DC6DAA /* Button_GreyDark_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_GreyDark_40.png; sourceTree = "<group>"; };
 		AD22771B141016F900DC6DAA /* Button_GreyLight_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_GreyLight_40.png; sourceTree = "<group>"; };
 		AD22771C141016F900DC6DAA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		AD22771D141016F900DC6DAA /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		AD2277251410171000DC6DAA /* CalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
 		AD2277261410171000DC6DAA /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		AD2277271410171000DC6DAA /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		AD2277281410171000DC6DAA /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 		AD2277291410171000DC6DAA /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
-		AD339BD21413DF1F00176DC2 /* set.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = set.jpeg; sourceTree = "<group>"; };
 		AD339BE11413E35100176DC2 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		AD339BE21413E35100176DC2 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		AD339BE61413E37A00176DC2 /* GraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
+		AD8F259314165494005F5903 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
 		AD9A02C31410F0B500B4B765 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		AD9A02C41410F0B500B4B765 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		ADCFCD891411245D00F94DC0 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		AD227713141016D300DC6DAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AD339BD21413DF1F00176DC2 /* set.jpeg */,
 				AD227714141016DE00DC6DAA /* XIBs */,
 				AD227716141016F900DC6DAA /* Images */,
 			);
@@ -230,8 +227,8 @@
 				AD227719141016F900DC6DAA /* Button_GreyDark_37.png */,
 				AD22771A141016F900DC6DAA /* Button_GreyDark_40.png */,
 				AD22771B141016F900DC6DAA /* Button_GreyLight_40.png */,
+				AD8F259314165494005F5903 /* icon.png */,
 				AD22771C141016F900DC6DAA /* Default.png */,
-				AD22771D141016F900DC6DAA /* Icon.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -311,10 +308,9 @@
 				AD227721141016F900DC6DAA /* Button_GreyDark_40.png in Resources */,
 				AD227722141016F900DC6DAA /* Button_GreyLight_40.png in Resources */,
 				AD227723141016F900DC6DAA /* Default.png in Resources */,
-				AD227724141016F900DC6DAA /* Icon.png in Resources */,
 				AD22772A1410171000DC6DAA /* CalculatorViewController.xib in Resources */,
-				AD339BD31413DF1F00176DC2 /* set.jpeg in Resources */,
 				AD339BE71413E37A00176DC2 /* GraphViewController.xib in Resources */,
+				AD8F259414165494005F5903 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

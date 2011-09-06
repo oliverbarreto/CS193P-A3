@@ -1,7 +1,28 @@
-CS193P-A3.V1.1.1 -
+CS193P-A3.V1.1.2 -
 	- Changed the GraphViewController to a Property style
 	- Changed the Setter for myScale to UpDateUI every time it is called (zoomIn, zoomOut)
-	- 
+
+Completed:
+- Required:
+	A.1: Easy one… with property style to remember the graph onscreen
+	A.2: I'm leaving all variables to allow more complex expression evaluations
+	A.3:	 The CalculatorMVC sends the current expression to the new created GraphViewMVC using its property
+	A.4: Zoom Buttons Done
+	A.5: … NEEDS TO DISPLAY THE EXPRESSION ON THE GRAPHVIEW !!!
+	A.6: Set up a Protocol that makes a Generic GraphView, that ask its delegate (GraphViewController) for information about scale, origin & the expression graphing values to be drawn on screen along with the X&Y axis.
+	A.7: Nice UI
+
+- Extra Credit:
+	A.E.4: Rotation enabled for GraphViewController
+			& managed the auto draw with self.contentMode = UIViewContentModeRedraw; in GraphView (initwithframe & awakefromNIB)
+
+	...
+	A.E.1: draw line vs draw dots
+	A.E.2: IBOutlet for switching between dots & lines drawing mode
+	A.E.3: Clean up the descriptionOfExpression: output
+ 
+- Known Bugs:
+	 
 
 CS193P-A3.V1.1.0 -
 	- Wired Up the XIB File of GraphViewController: zoomIn, zoomOut & scaleLabel & UIView
@@ -19,13 +40,6 @@ CS193P-A3.V1.0 - Initial Commit
 		- CalculatorViewController as the first Controller in the App
 		- A new GraphViewController to manage the graph view of the current expression in the 			CalculatorViewController
 		- The XIB file contains a ZoomIn and a ZoomOut buttons, also displays a Label to present the user the current state of the scale property 
-
-Completed:
-- Required:
-
-- Extra Credit:
- 
-- Known Bugs:
 
 
 
