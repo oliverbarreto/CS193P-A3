@@ -27,7 +27,7 @@
 
     UIButton *radiansModeButton;                //Set Mode: Deg vs Rads
     
-    GraphViewController *myGraphViewMVC;        //Remember the graph in UINavBar
+    //GraphViewController *myGraphViewMVC;        //Remember the graph in UINavBar
 
 }
 
@@ -38,7 +38,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *radiansModeButton;
 @property (nonatomic, retain) IBOutlet UIButton *editVariableModeEnabledButton;
 
-@property (readonly) GraphViewController *myGraphViewMVC;
+//@property (readonly) GraphViewController *myGraphViewMVC;
 
 - (IBAction)digitPressed:(id)sender;
 - (IBAction)operationPressed:(id)sender;

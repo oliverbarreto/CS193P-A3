@@ -1,14 +1,11 @@
-CS193P-A3.V1.1.2 -
-	- Changed the GraphViewController to a Property style
-	- Changed the Setter for myScale to UpDateUI every time it is called (zoomIn, zoomOut)
-
+CS193P-A3.V1.1.3 -
 Completed:
 - Required:
 	A.1: Easy one… with property style to remember the graph onscreen
 	A.2: I'm leaving all variables to allow more complex expression evaluations
 	A.3:	 The CalculatorMVC sends the current expression to the new created GraphViewMVC using its property
 	A.4: Zoom Buttons Done
-	A.5: … NEEDS TO DISPLAY THE EXPRESSION ON THE GRAPHVIEW !!!
+	A.5: Done… in order to make it work with Cos & Sin which are radians mode default operations, and since my CalculatorBrain works in degrees by default, i set the radiansMode property to YES on init… so display is not accurate, but it draws sin & cos correctly 
 	A.6: Set up a Protocol that makes a Generic GraphView, that ask its delegate (GraphViewController) for information about scale, origin & the expression graphing values to be drawn on screen along with the X&Y axis.
 	A.7: Nice UI
 
@@ -16,13 +13,15 @@ Completed:
 	A.E.4: Rotation enabled for GraphViewController
 			& managed the auto draw with self.contentMode = UIViewContentModeRedraw; in GraphView (initwithframe & awakefromNIB)
 
-	...
+
+	Sorry but I'm not good at graphics !!! so… no extra credit this time. Also the simplification of the expression is left due to time issues.
+
 	A.E.1: draw line vs draw dots
 	A.E.2: IBOutlet for switching between dots & lines drawing mode
 	A.E.3: Clean up the descriptionOfExpression: output
  
 - Known Bugs:
-	 
+	 - in order to make it work with Cos & Sin which are radians mode default operations, and since my CalculatorBrain works in degrees by default, i set the radiansMode property to YES on init… so display is not accurate, but it draws sin & cos correctly 
 
 CS193P-A3.V1.1.0 -
 	- Wired Up the XIB File of GraphViewController: zoomIn, zoomOut & scaleLabel & UIView

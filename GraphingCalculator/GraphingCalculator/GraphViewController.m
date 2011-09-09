@@ -73,6 +73,18 @@
     return self.myOrigin;
 }
 
+- (double)expressionYValueResultForXValue:(CGFloat)xValue forRequestor:(GraphView *)graphView {
+
+	//NSDictionary *evaluateWithXValue = [NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:((xValue * 180) / M_PI)] forKey:@"x"];
+	NSDictionary *evaluateWithXValue = [NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:xValue] forKey:@"x"];
+        
+    double yValue = [CalculatorBrain evaluateExpression:self.myExpression usingVariableValues:evaluateWithXValue];
+
+    return yValue;
+
+}
+
+
 #pragma mark - IBAction Methods
 
 - (void)zoomIn:(id)sender {

@@ -272,6 +272,7 @@
     //Create an instance of Calculator Class to be able to access iVars from Class Method
     CalculatorBrain *myEvaluatorBrain = [[CalculatorBrain alloc] init];  
     double myResult = 0;
+    myEvaluatorBrain.radiansMode = YES;
     
     //Enumeration through the expression
     for (id myExpressionItem in anExpression) {

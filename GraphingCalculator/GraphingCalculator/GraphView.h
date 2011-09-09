@@ -14,6 +14,7 @@
 @protocol GraphViewDelegate 
 - (float)scaleForGraphView:(GraphView *)requestor;      //scale > 0
 - (CGPoint)originForGraphView:(GraphView *)requestor;   //origin of graph on screen coordinates
+- (double)expressionYValueResultForXValue:(CGFloat)xValue forRequestor:(GraphView *)graphView;
 
     //-- Yet more to be defined !!!
 

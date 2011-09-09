@@ -203,12 +203,12 @@
 		AD227715141016E800DC6DAA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AD2277291410171000DC6DAA /* CalculatorBrain.h */,
+				AD2277281410171000DC6DAA /* CalculatorBrain.m */,
 				AD2276EE1410164900DC6DAA /* GraphingCalculatorAppDelegate.h */,
 				AD2276EF1410164900DC6DAA /* GraphingCalculatorAppDelegate.m */,
 				AD2277271410171000DC6DAA /* CalculatorViewController.h */,
 				AD2277261410171000DC6DAA /* CalculatorViewController.m */,
-				AD2277291410171000DC6DAA /* CalculatorBrain.h */,
-				AD2277281410171000DC6DAA /* CalculatorBrain.m */,
 				AD339BE11413E35100176DC2 /* GraphViewController.h */,
 				AD339BE21413E35100176DC2 /* GraphViewController.m */,
 				ADCFCD891411245D00F94DC0 /* GraphView.h */,

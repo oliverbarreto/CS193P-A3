@@ -73,12 +73,80 @@
 
 }
 
+// Drawing of the graph in the axis, in red lines
+- (void) drawExpressionInGraph:(CGRect)rect originAtPoint:(CGPoint)centerPointOfGraphView scale:(CGFloat)myScale {
+
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIGraphicsPushContext(context);
+    
+    CGContextBeginPath(context);
+
+    for (CGFloat i = 0; i <= self.bounds.size.width; i++) {
+        CGPoint nextPointInViewCoordinates = CGPointMake(0,0);
+        CGPoint nextPointInGraphCoordinates = CGPointMake(0,0);
+    
+        // View Value of X
+        nextPointInViewCoordinates.x = i;
+    
+    
+        //        NSLog(@"Scale: %.4f", [self.delegate scaleForGraphView:self]);
+    
+        // Graph value of x
+        nextPointInGraphCoordinates.x = (nextPointInViewCoordinates.x - centerPointOfGraphView.x) / (myScale * self.contentScaleFactor);
+    
+        // Graph value of y
+        nextPointInGraphCoordinates.y = ([self.delegate expressionYValueResultForXValue:nextPointInGraphCoordinates.x forRequestor:self]);
+    
+        // View Value of Y
+        nextPointInViewCoordinates.y = centerPointOfGraphView.y - (nextPointInGraphCoordinates.y * myScale * self.contentScaleFactor);		
+    
+    //        NSLog(@"Drawing Points:");
+    //        NSLog(@"Point In VIEW coordinates: (x = %.2f, y = %.2f)",nextPointInViewCoordinates.x, nextPointInViewCoordinates.y);
+    //        NSLog(@"Point In GRAPH coordinates: (x = %.2f, y = %.2f)",nextPointInGraphCoordinates.x, nextPointInGraphCoordinates.y);
+    //        NSLog(@"Scale: %.4f", [self.delegate scaleForGraphView:self]);
+    //        NSLog(@"ContentScaleFactor: %.2f", self.contentScaleFactor);
+    
+        
+    //-- LINES APPROACH
+    //-- Start Drawing lines on the graph
+        if (i == 0) {
+            CGContextMoveToPoint(context, nextPointInViewCoordinates.x, nextPointInViewCoordinates.y);
+        } else {
+            CGContextAddLineToPoint(context, nextPointInViewCoordinates.x, nextPointInViewCoordinates.y);
+        }        
+    
+    }
+
+    [[UIColor redColor] setStroke];
+    CGContextDrawPath(context, kCGPathStroke);
+    
+    UIGraphicsPopContext();
+}
+
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    [self testingDrawing:rect];
-}
+    //[self testingDrawing:rect];   //Draws the X&Y axis and a Red Circle
+    
+    //-- Step 1: Draw the X&Y Axis
+    
+    CGPoint centerPointOfGraphView;
+    centerPointOfGraphView.x = self.bounds.origin.x + self.bounds.size.width/2;
+    centerPointOfGraphView.y = self.bounds.origin.y + self.bounds.size.height/2;
+
+    [[UIColor blueColor] setStroke];
+    
+    [AxesDrawer drawAxesInRect:rect originAtPoint:centerPointOfGraphView scale:[self.delegate scaleForGraphView:self]];
+    
+
+    //-- Step 2: Draw the Y value of Expression for each X Axis value
+
+    [self drawExpressionInGraph:rect originAtPoint:centerPointOfGraphView scale:[self.delegate scaleForGraphView:self]]; 
+
+    
+}    
 
 
 
